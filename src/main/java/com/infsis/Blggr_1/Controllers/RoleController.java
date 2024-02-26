@@ -12,7 +12,7 @@ public class RoleController {
         RoleDTO roleDTO = new RoleDTO(1,"name");
         return ResponseEntity.ok().body(roleDTO);
     }
-    @GetMapping("{/id}")
+    @GetMapping("/{id}")
     public ResponseEntity<RoleDTO> getRol(@PathVariable Integer id){
         RoleDTO roleDTO = new RoleDTO(1,"name");
         return ResponseEntity.ok().body(roleDTO);
@@ -21,11 +21,11 @@ public class RoleController {
     public ResponseEntity<RoleDTO> saveRole(@RequestBody RoleDTO roleDTO){
         return ResponseEntity.ok().body(roleDTO);
     }
-    @PutMapping("{/id}")
+    @PutMapping("/{id}")
     public ResponseEntity<RoleDTO> updateRole(@PathVariable Integer id, @RequestBody RoleDTO roleDTO){
         return ResponseEntity.ok().body(roleDTO);
     }
-    @DeleteMapping("{/id}")
+    @DeleteMapping("/{id}")
     public void deleteRole(@PathVariable Integer id){
     }
 }
