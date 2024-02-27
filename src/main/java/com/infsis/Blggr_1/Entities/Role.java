@@ -1,17 +1,20 @@
 package com.infsis.Blggr_1.Entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
     private String name;
+
+
+    @ManyToMany(mappedBy = "roles")
+    private List<User> users;
+
 
     public Role(Integer id, String name) {
         this.id = id;
